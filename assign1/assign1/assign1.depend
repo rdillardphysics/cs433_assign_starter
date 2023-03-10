@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1675637234 source:c:\users\rusty\onedrive\documents\file manager csc\cs spring 2023\cs 433 - operating systems\hw\programming assignments\cs433_assign_starter\assign1\assign1\main.cpp
+	<iostream>
+	"readyqueue.h"
+	"pcbtable.h"
+
+1675622292 c:\users\rusty\onedrive\documents\file manager csc\cs spring 2023\cs 433 - operating systems\hw\programming assignments\cs433_assign_starter\assign1\assign1\readyqueue.h
+	"pcb.h"
+
+1675619172 c:\users\rusty\onedrive\documents\file manager csc\cs spring 2023\cs 433 - operating systems\hw\programming assignments\cs433_assign_starter\assign1\assign1\pcb.h
+	<iostream>
+
+1675622618 c:\users\rusty\onedrive\documents\file manager csc\cs spring 2023\cs 433 - operating systems\hw\programming assignments\cs433_assign_starter\assign1\assign1\pcbtable.h
+	"pcb.h"
+

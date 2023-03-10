@@ -1,12 +1,10 @@
 /**
  * Assignment 1: priority queue of processes
  * @file pcb.h
- * @author ??? (TODO: your name)
+ * @author Rusty Dillard
  * @brief This is the header file for the PCB class, a process control block.
  * @version 0.1
  */
-//You must complete the all parts marked as "TODO". Delete "TODO" after you are done.
-// Remember to addPCB sufficient comments to your code
 
 #pragma once
 #include <iostream>
@@ -56,7 +54,7 @@ public:
      * @return unsigned int: the ID of the PCB
      */
     unsigned int getID() {
-        return id;
+        return this->id;
     }
 
     /**
@@ -65,7 +63,7 @@ public:
      * @return unsigned int: the priority of the PCB
      */
     unsigned int getPriority() {
-        return priority;
+        return this->priority;
     }
 
     /**
@@ -74,7 +72,7 @@ public:
      * @return ProcState: the state of the PCB
      */
     ProcState getState() {
-        return state;
+        return this->state;
     }
 
     /**
@@ -82,7 +80,7 @@ public:
      * @param state
      */
     void setState(ProcState state) {
-        // TODO: add your code here
+        this->state = state;
     }
 
     /**
@@ -90,17 +88,16 @@ public:
      * @param priority
      */
     void setPriority(unsigned int priority) {
-        // TODO: add your code here
+        this->priority = priority;
     }
 
     /**
-     * @brief Print the PCB.
-     *
+     * @brief Print the PCB via the console.
      */
     void display() const {
         cout << "ID: " << id;
         cout << ", Priority: " << priority;
-        cout << ", State: " ;
+        cout << ", State: ";
         switch(state) {
             case ProcState::NEW:
                 cout << "NEW";

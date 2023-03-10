@@ -1,47 +1,77 @@
 /**
  * Assignment 1: priority queue of processes
  * @file pcbtable.h
- * @author ??? (TODO: your name)
+ * @author Rusty Dillard
  * @brief This is the implementation file for the PCBTable class.
- * //You must complete the all parts marked as "TODO". Delete "TODO" after you are done.
- * // Remember to add sufficient comments to your code
  */
 
 #include "pcbtable.h"
 
 /**
- * @brief Construct a new PCBTable object of the given size (number of PCBs)
+ * @brief Overloaded constructor for the PCBTable class.
  *
  * @param size: the capacity of the PCBTable
  */
 PCBTable::PCBTable(int size) {
-   // TODO: add your code here
+    //  Initialize the data members
+    this->size = size;
+    this->count = 0;
+    this->table = new PCB * [this->size];
+
+    //  Loop through and set all of the pointers in the table to null.
+    for (int i = 0; i < this->size; i++) {
+        this->table[i] = nullptr;
+    }
 }
 
 /**
- * @brief Destroy the PCBTable object. Make sure to delete all the PCBs in the table.
- *
+ * @brief Base constructor for the PCBTable class.
+ */
+PCBTable::PCBTable() {
+    //  Initialize the data members.
+    this->size = 100;
+    this->count = 0;
+    this->table = new PCB * [this->size];
+    
+    //  Loop through and set all of the pointers in the table to null.
+    for (int i = 0; i < this->size; i++) {
+        this->table[i] = nullptr;
+    }
+}
+
+/**
+ * @brief Destructor: releases all of the heap memory allocation associated with the PCBTable.
  */
 PCBTable::~PCBTable() {
-   // TODO: add your code here
+    for (int i = 0; i <= this->count; i++){
+        delete this->table[i];
+    }
+    delete[] this->table;
 }
 
 /**
  * @brief Get the PCB at index "idx" of the PCBTable.
  *
- * @param idx: the index of the PCB to get
- * @return PCB*: pointer to the PCB at index "idx"
+ * @param idx: the index of the PCB to get.
+ * @return PCB*: pointer to the PCB at index "idx".
  */
 PCB* PCBTable::getPCB(unsigned int idx) {
-    // TODO: add your code here
-    return NULL;
+    return this->table[idx];
 }
 
 /**
- * @brief Add a PCB to the PCBTable.
+ * @brief Add a PCB pointer to the PCBTable.
  *
- * @param pcb: the PCB to add
+ * @param pcb: the PCB pointer to add
+ * @param idx: index at which to store the PCB pointer
  */
 void PCBTable::addPCB(PCB *pcb, unsigned int idx) {
-    // TODO: add your code here
+    if (this->count < this->size) {
+        this->table[idx] = pcb;
+        this->count++;
+    }
+
+    else {
+        cout << "This table is full.\n";
+    }
 }

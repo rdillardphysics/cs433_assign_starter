@@ -19,15 +19,15 @@ int main(int argc, char* argv[]) {
     std::cout << "Description : Program to implement a priority ready queue of processes" << std::endl;
     std::cout << "************Performing Test 1********************" << std::endl;
     std::cout << "=================================" << std::endl;
-
+    
     ReadyQueue q1;
     PCBTable table;
-
+    
     for (int i = 1; i <= 50; i++) {
         // Add a new PCB with id = i, priority = i to the table at index i
         table.addNewPCB(i, i, i);
     }
-
+    
     std::cout << "Add process 15, 6, 23, 39 and 8 to q1. Display the content of q1" << std::endl;
     q1.addPCB(table.getPCB(15));
     q1.addPCB(table.getPCB(6));
@@ -35,11 +35,11 @@ int main(int argc, char* argv[]) {
     q1.addPCB(table.getPCB(39));
     q1.addPCB(table.getPCB(8));
     q1.displayAll();
-
+    
     std::cout << "remove the process with the highest priority from q1 and display q1." << std::endl;
     PCB* p = q1.removePCB();
     q1.displayAll();
-
+    
     std::cout << "add processes 47, 1, 37 and 5 into q1 and display q1" << std::endl;
     q1.addPCB(table.getPCB(47));
     q1.addPCB(table.getPCB(1));
